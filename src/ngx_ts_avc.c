@@ -196,9 +196,7 @@ ngx_ts_avc_decode_params(ngx_ts_stream_t *ts, u_char *sps, size_t sps_len,
 
             for (i = 0; i < n; i++) {
                 br.name = "seq_scaling_list_present_flag[i]";
-                if (ngx_ts_avc_read(&br, 1)) {
-                    goto failed;
-                }
+                ngx_ts_avc_read(&br, 1);
             }
         }
     }
